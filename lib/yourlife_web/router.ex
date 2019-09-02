@@ -20,7 +20,9 @@ defmodule YourlifeWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", YourlifeWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", YourlifeWeb do
+    pipe_through :api
+
+    get("/test", ApiController, :api_test)
+  end
 end
